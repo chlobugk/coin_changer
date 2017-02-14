@@ -1,16 +1,26 @@
-def coin_function(my_cents)
+def penny_function(my_cents)
 	
-	hash_coins = {}
-	final = 0
-	# penny = 1
-	# nickel = 5
-	# dime = 10
-	# quarter = 25
+	hash_pennies = {}
+	pennies = 0
+
 	if (my_cents - 1) > 0
-		final = my_cents / 1
+		pennies = my_cents / 1
+		hash_pennies[:penny] = pennies
 	end
-	hash_coins[:penny] = final
-	hash_coins
+	hash_pennies
+end
+
+
+def nickel_function(my_cents)
+
+	hash_nickels = {}
+	nickels = 0
+
+	if (my_cents - 5) > 0
+		nickels = (my_cents / 5).floor
+		hash_nickels[:nickel] = nickels
+	end
+	hash_nickels
 end
 
 
