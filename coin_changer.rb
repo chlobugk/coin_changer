@@ -1,52 +1,62 @@
 def penny_function(my_cents)
-	
-	hash_pennies = {}
 	pennies = 0
 
 	if (my_cents - 1) > 0
 		pennies = my_cents / 1
-		hash_pennies[:penny] = pennies
 	end
-	hash_pennies
-end
+	amount = my_cents - pennies  	#First 4 functions show cents 
+end									#remaining after coins taken off
 
 
 def nickel_function(my_cents)
-
-	hash_nickels = {}
 	nickels = 0
 
 	if (my_cents - 5) > 0
 		nickels = (my_cents / 5).floor
-		hash_nickels[:nickel] = nickels
 	end
-	hash_nickels
+	amount = my_cents - (5 * nickels)
 end
 
 
 def dime_function(my_cents)
-
-	hash_dimes = {}
 	dimes = 0
 
 	if (my_cents - 10) > 0
 		dimes = (my_cents / 10).floor
-		hash_dimes[:dime] = dimes
 	end
-	hash_dimes
+	amount = my_cents - (10 * dimes)
 end
 
 
 def quarter_function(my_cents)
-
-	hash_quarter = {}
 	quarters = 0
+	amount = 0
 
 	if (my_cents - 25) > 0
 		quarters = (my_cents / 25).floor
-		hash_quarter[:quarter] = quarters
 	end
-	hash_quarter
+	amount = my_cents - (25 * quarters)
+end
+
+
+def final_coin_function(my_cents)
+
+	hash_coins = {}
+	first = 0
+
+	first = my_cents - (quarter_function(my_cents))
+
+	second = first - (10 * dime_function(first))
+
+	third = second - (5 * nickel_function(second))
+
+	fourth = third - penny_function(third)
+
+	hash_coins[:quarter] = first
+	hash_coins[:dime] = second
+	hash_coins[:nickel] = third
+	hash_coins[:penny] = fourth
+	hash_coins
 end
 
 
