@@ -46,6 +46,10 @@ class FinalCoinChanger < MiniTest::Test
 		assert_equal({:quarter => 4, :dime => 2, :penny => 3}, results)
 	end
 
-
+	def test_7_returns_correctly
+		my_cents = 7
+		results = final_coin_function(my_cents)
+		assert_equal({:nickel => 1, :penny => 2}, results)
+	end
 
 end
