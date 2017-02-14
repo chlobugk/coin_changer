@@ -23,6 +23,7 @@ def nickel_function(my_cents)
 	hash_nickels
 end
 
+
 def dime_function(my_cents)
 
 	hash_dimes = {}
@@ -35,6 +36,18 @@ def dime_function(my_cents)
 	hash_dimes
 end
 
+
+def quarter_function(my_cents)
+
+	hash_quarter = {}
+	quarters = 0
+
+	if (my_cents - 25) > 0
+		quarters = (my_cents / 25).floor
+		hash_quarter[:quarter] = quarters
+	end
+	hash_quarter
+end
 
 
 
