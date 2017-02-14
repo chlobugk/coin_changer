@@ -13,4 +13,10 @@ class CoinChanger < MiniTest::Test
 		results = nickel_function(my_cents)
 		assert_equal({:nickel => 3}, results)
 	end
+
+	def test_53_returns_5dime
+		my_cents = 53
+		results = dime_function(my_cents)
+		assert_equal({:dime => 5}, results)
+	end
 end
