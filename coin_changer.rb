@@ -35,9 +35,10 @@ def quarter_function(my_cents)
 end
 
 
-def final_coin_function(my_cents)
+def coin_hash(my_cents)
 
 	hash_coins = {}
+
 
 	if my_cents && (my_cents >= 25)					
 		first = quarter_function(my_cents)
@@ -64,6 +65,24 @@ def final_coin_function(my_cents)
 
 	hash_coins
 end
+
+def final_coin_changer(my_cents)
+
+	cents = coin_hash(my_cents)
+
+	coin_string = ''
+
+	cents.each do |coin, value|
+		coin_string << value.to_s + ' ' + coin.to_s + ' '
+	end
+	coin_string
+		
+end
+
+
+
+
+
 
 # 											#written out 44 cents
 # 		first = quarter_function(my_cents)  #first = 1

@@ -27,29 +27,42 @@ class IndividualCoinChanger < MiniTest::Test
 	end
 end
 
-class FinalCoinChanger < MiniTest::Test 
+class FinalCoinHash < MiniTest::Test 
 	def test_44_returns_correctly
 		my_cents = 44
-		results = final_coin_function(my_cents)
+		results = coin_hash(my_cents)
 		assert_equal({:quarter => 1, :dime => 1, :nickel => 1, :penny => 4 }, results)
 	end
 
 	def test_27_returns_correctly
 		my_cents = 27
-		results = final_coin_function(my_cents)
+		results = coin_hash(my_cents)
 		assert_equal({:quarter => 1, :penny => 2}, results)
 	end
 
 	def test_123_returns_correctly
 		my_cents = 123
-		results = final_coin_function(my_cents)
+		results = coin_hash(my_cents)
 		assert_equal({:quarter => 4, :dime => 2, :penny => 3}, results)
 	end
 
 	def test_7_returns_correctly
 		my_cents = 7
-		results = final_coin_function(my_cents)
+		results = coin_hash(my_cents)
 		assert_equal({:nickel => 1, :penny => 2}, results)
 	end
+
+end
+
+class HashToString < MiniTest::Test
+	def test_hash_returns_string
+		my_cents = 44
+		results = final_coin_changer(my_cents)
+		assert_equal('1 quarter 1 dime 1 nickel 4 penny ', results)
+	end
+
+
+
+
 
 end
