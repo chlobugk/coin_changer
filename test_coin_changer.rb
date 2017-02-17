@@ -52,6 +52,12 @@ class FinalCoinHash < MiniTest::Test
 		assert_equal({:nickel => 1, :penny => 2}, results)
 	end
 
+	def test_25_1_quarter
+		my_cents = 25
+		results = coin_hash(my_cents)
+		assert_equal({:quarter => 1}, results)
+	end
+
 end
 
 class HashToString < MiniTest::Test
@@ -61,8 +67,10 @@ class HashToString < MiniTest::Test
 		assert_equal('1 quarter 1 dime 1 nickel 4 penny ', results)
 	end
 
-
-
-
+	def test_25_1_quarter
+		my_cents = 25
+		results = final_coin_changer(my_cents)
+		assert_equal('1 quarter ', results)
+	end
 
 end
