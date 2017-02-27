@@ -1,0 +1,38 @@
+.headline{
+color: white;
+font-size: 5vh
+}
+
+.font{
+font-family: tahoma
+}
+
+.font_color{
+color: black
+}
+
+.center{
+text-align: center
+}
+
+.bg_color{
+background-color: lightsteelblue
+}
+
+.background{
+background-color: rosybrown;
+border-style: double;
+border-color: white;
+border-width: 15
+}
+
+.image{
+background-image: url(/css/coins_image.gif);
+height: 15rem;
+width: 16rem
+}
+
+.img_center{
+display: block;
+margin: 0 auto
+}
